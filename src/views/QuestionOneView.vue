@@ -10,7 +10,7 @@
     <v-row>
       <v-col cols="6" offset="3">
         <div>
-        Live Conversion: {{text | smallLetter }}
+        Live Conversion: {{toLowerCase}}
         </div>
       </v-col>
     </v-row>
@@ -26,10 +26,15 @@
 
 <script>
 export default {
-    filters: {
-        smallLetter(val){
-            return val ? val.toLowerCase() : ''
-        }
+    // filters: {
+    //     smallLetter(val){
+    //         return val ? val.toLowerCase() : ''
+    //     }
+    // },
+    computed: {
+      toLowerCase(){
+        return this.text.toLowerCase()
+      }
     },
     data(){
         return {
